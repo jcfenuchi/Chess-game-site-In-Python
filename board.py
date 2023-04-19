@@ -25,9 +25,6 @@ class Board():
         [piece_obj.default_pos(piece_name) for piece_name,piece_obj in self.my_piece.items()]
         self.add_enemy_pieces(type_color,screen,pieces)
     
-        [print(n,o,f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in self.my_piece.items()]
-        [print(n,o, f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in self.enemy_piece.items()]
-    
     def add_enemy_pieces(self,type_color,screen,pieces):
         type_color = "white" if type_color != "white" else "black"
         self.enemy_piece["king0"] = pieces[0](screen,type_color)

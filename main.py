@@ -21,7 +21,9 @@ def main():
     board = Board(heigth,weigth,screen=screen)
     # add pieces in the board
     board.add_pieces("black",screen,(King,Queen,Bishop,Knigth,Rook,Pawn))
-    
+    [print(n,o,f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in board.my_piece.items()]
+    [print(n,o, f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in board.enemy_piece.items()]
+
     #create pieces
 
     #ver cordenadas PARA VER CORDENADAS DESCOMENTE ISSO
