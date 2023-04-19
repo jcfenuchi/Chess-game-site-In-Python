@@ -3,13 +3,14 @@ import pygame
 class Rook():
     def __init__(self,screen, color):
         self.rook = pygame.transform.scale(pygame.image.load(f"images/pieces/{color}/Rook.png").convert_alpha(),(60,60))
+        self.color = color
         self.screen = screen
         self.posX = self.posY = None
     
-    def default_pos(self,name):
+    def default_pos(self,name,y=725):
         ''' Func to move the piece by your name in the board'''
         num_of_piece = int((name[-1]))
-        self.posY = 725
+        self.posY = y
         if num_of_piece == 0:
             self.posX = 20
             self.screen.blit(self.rook,(self.posX,self.posY))
@@ -27,12 +28,13 @@ class Bishop():
     def __init__(self,screen, color):
         self.bishop = pygame.transform.scale(pygame.image.load(f"images/pieces/{color}/Bishop.png").convert_alpha(),(60,60))
         self.screen = screen
+        self.color = color
         self.posX = self.posY = None
     
-    def default_pos(self,name):
+    def default_pos(self,name,y=725):
         ''' Func to move the piece by your name in the board'''
         num_of_piece = int((name[-1]))
-        self.posY = 725
+        self.posY = y
         if num_of_piece == 0:
             self.posX = 220
             self.screen.blit(self.bishop,(self.posX,self.posY))
@@ -49,11 +51,12 @@ class King():
     def __init__(self,screen, color):
         self.king = pygame.transform.scale(pygame.image.load(f"images/pieces/{color}/King.png").convert_alpha(),(60,60))
         self.screen = screen
+        self.color = color
         self.posX = self.posY = None
     
-    def default_pos(self,_onlyOne):
+    def default_pos(self,_onlyOne,y=725):
         ''' Func to move the piece by your name in the board'''
-        self.posX,self.posY = (420,725)
+        self.posX,self.posY = (420,y)
         self.screen.blit(self.king,(self.posX,self.posY))
 
     def set_pos(self,posX,posY):
@@ -65,11 +68,12 @@ class Queen():
     def __init__(self,screen, color):
         self.queen = pygame.transform.scale(pygame.image.load(f"images/pieces/{color}/Queen.png").convert_alpha(),(60,60))
         self.screen = screen
+        self.color = color
         self.posX = self.posY = None
     
-    def default_pos(self,_onlyOne):
+    def default_pos(self,_onlyOne,y=725):
         ''' Func to move the piece by your name in the board'''
-        self.posX,self.posY = (325,725)
+        self.posX,self.posY = (325,y)
         self.screen.blit(self.queen,(self.posX,self.posY))
 
     def set_pos(self,posX,posY):
@@ -81,12 +85,13 @@ class Pawn():
     def __init__(self,screen, color):
         self.pawn = pygame.transform.scale(pygame.image.load(f"images/pieces/{color}/Pawn.png").convert_alpha(),(60,60))
         self.screen = screen
+        self.color = color
         self.posX = self.posY = None
     
-    def default_pos(self,name):
+    def default_pos(self,name,y=625):
         ''' Func to move the piece by your name in the board'''
         num_of_piece = int(name[-1])
-        self.posY = 625
+        self.posY = y
         if num_of_piece == 0:
             self.posX = 20
             self.screen.blit(self.pawn,(self.posX,self.posY))
@@ -121,12 +126,13 @@ class Knigth():
     def __init__(self,screen, color):
         self.knigth = pygame.transform.scale(pygame.image.load(f"images/pieces/{color}/Knigth.png").convert_alpha(),(60,60))
         self.screen = screen
+        self.color = color
         self.posX = self.posY = None
     
-    def default_pos(self,name):
+    def default_pos(self,name,y=725):
         ''' Func to move the piece by your name in the board'''
         num_of_piece= int(name[-1])
-        self.posY = 725
+        self.posY = y
         if num_of_piece == 0:
             self.posX = 120
             self.screen.blit(self.knigth,(self.posX,self.posY))
