@@ -92,7 +92,7 @@ class King():
     
     def default_pos(self,_onlyOne,y=750):
         ''' Func to move the piece by your name in the board'''
-        self.posX,self.posY = (450,y)
+        self.posX,self.posY = (350,y)
         self.screen.blit(self.king,(self.posX,self.posY))
 
     def set_pos(self,posX,posY):
@@ -127,7 +127,7 @@ class Queen():
 
     def default_pos(self,_onlyOne,y=750):
         ''' Func to move the piece by your name in the board'''
-        self.posX,self.posY = (350,y)
+        self.posX,self.posY = (450,y)
         self.screen.blit(self.queen,(self.posX,self.posY))
 
     def set_pos(self,posX,posY):
