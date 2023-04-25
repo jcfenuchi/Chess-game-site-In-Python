@@ -5,10 +5,15 @@ import pygame
 class Board():
     def __init__(self,board_heigth,board_weigth,screen):
         self.board = pygame.transform.scale(pygame.image.load("images/board/chess board.jpg").convert_alpha(),(board_heigth,board_weigth))
-        screen.fill("white")
-        screen.blit(self.board, (0,0))
+        self.screen = screen
         self.my_piece = {}
         self.enemy_piece = {}
+
+    def board_blit(self):
+        self.screen.blit(self.board, (0,0))
+        [piece.blit() for piece in self.enemy_piece.values()]
+        [piece.blit() for piece in self.my_piece.values()]
+        
 
     def add_pieces(self,type_color,screen,pieces):
         # King,Queen,Bishop,Knigth,Rook,Pawn
@@ -35,4 +40,4 @@ class Board():
             self.enemy_piece["rook"+number_of_piece] = pieces[4](screen,type_color)
         for index in range(8):
             self.enemy_piece["pawn"+str(index)] = pieces[5](screen,type_color)
-        [obj.default_pos(n,120) if "pawn" in n else obj.default_pos(n,20) for n,obj in self.enemy_piece.items()]
+        [obj.default_pos(n,150) if "pawn" in n else obj.default_pos(n,50) for n,obj in self.enemy_piece.items()]

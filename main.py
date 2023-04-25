@@ -21,11 +21,9 @@ def main():
     board = Board(heigth,weigth,screen=screen)
     # add pieces in the board
     board.add_pieces("black",screen,(King,Queen,Bishop,Knigth,Rook,Pawn))
-    [print(n,o,f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in board.my_piece.items()]
-    [print(n,o, f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in board.enemy_piece.items()]
-
+    #[print(n,o,f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in board.my_piece.items()]
+    #[print(n,o, f"the position is x={o.posX},y={o.posY} my_color={o.color}") for n,o in board.enemy_piece.items()]
     #create pieces
-
     #ver cordenadas PARA VER CORDENADAS DESCOMENTE ISSO
     #car = pygame.transform.scale(pygame.image.load("images/pieces/white/Pawn.png").convert_alpha(),(60,60))
     #pos_x_car = 630
@@ -36,12 +34,15 @@ def main():
     # main loop
     while running:
         # event handling, gets all event from the event queue
-        for event in pygame.event.get():
+        for event in (event_list := pygame.event.get()):
             # only do something if the event is of type QUIT
             if event.type == pygame.QUIT:
                 # change the value to False, to exit the main loop
                 running = False
+        board.board_blit()
+        [obj.update(event_list) for obj in board.my_piece.values()]
 
+        #board.my_piece['rook1'].update(event_list)
         #ver cordenadas PARA VER CORDENADAS DESCOMENTE ISSO
         #screen.blit(car,(pos_x_car,pos_y_car))
         #keys = pygame.key.get_pressed()
@@ -56,9 +57,8 @@ def main():
         #print(pos_x_car,pos_y_car)
         
         
-        # flip() the display to put your work on screen
-        pygame.display.flip()
         
+        pygame.display.update()
 
         # dt is delta time in seconds since last frame, used for framerate-
         # independent physics.
