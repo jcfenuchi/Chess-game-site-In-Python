@@ -1,4 +1,4 @@
-# Chess in Python
+# Chess in Python  ( ⚠️⚠️⚠️ IN WORKING NOW ⚠️⚠️⚠️ )
 ![chess logo](/images/logo_chess.png "chess logo")
 
 ### in this code want to test myself building a chess game using pygame, numpy, and a two server using socket or Flask api
