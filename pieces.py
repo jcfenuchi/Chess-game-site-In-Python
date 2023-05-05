@@ -30,7 +30,8 @@ class Rook():
                 self.move = False
             elif event.type == pygame.MOUSEMOTION and self.move:
                 self.set_pos(*pygame.mouse.get_pos())
-        pygame.draw.rect(self.screen, (255, 0, 0), self.rook.get_rect(center = (self.posX, self.posY)), 1)
+        
+            pygame.draw.rect(self.screen, (255, 0, 0), self.rook.get_rect(center = (self.posX, self.posY)), 1)
                     
     def set_pos(self,posX,posY):
         ''' Move the piece to X Y'''
